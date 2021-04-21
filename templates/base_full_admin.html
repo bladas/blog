@@ -1,0 +1,51 @@
+{% load i18n %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>blog</title>
+    {% block css %}
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/static/fonts/elegant-font/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Cormorant:300,300i,400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/static/fonts/font-awesome/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="/static/styles/bootstrap.css" />
+        <link rel="stylesheet" href="/static/styles/main.css" />
+    {% endblock %}
+</head>
+<body>
+
+        {% block body %}
+
+            {% block header %}{% endblock %}
+
+            {% block wrapper %}{% endblock %}
+
+            {% block footer %}{% endblock %}
+
+        {% endblock %}
+
+
+    {% block js %}
+        <script src="/static/scripts/vendors/jquery-3.4.1.min.js"></script>
+        <script src="/static/scripts/vendors/jquery.hoverIntent.min.js"></script>
+        <script src="/static/scripts/vendors/perfect-scrollbar.min.js"></script>
+        <script src="/static/scripts/vendors/jquery.easing.min.js"></script>
+        <script src="/static/scripts/vendors/wow.min.js"></script>
+        <script src="/static/scripts/vendors/parallax.min.js"></script>
+        <script src="/static/scripts/vendors/isotope.min.js"></script>
+        <script src="/static/scripts/vendors/imagesloaded.pkgd.min.js"></script>
+        <script src="/static/scripts/vendors/packery-mode.pkgd.min.js"></script>
+        <script src="/static/scripts/vendors/owl-carousel.min.js"></script>
+        <script src="/static/scripts/vendors/jquery.appear.js"></script>
+        <script src="/static/scripts/vendors/jquery.countTo.js"></script>
+        <script src="/static/scripts/main.js"></script>
+    {% endblock %}
+</body>
+</html>

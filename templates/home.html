@@ -1,0 +1,88 @@
+
+{% extends 'base_admin.html' %}
+{% load i18n %}
+
+{% block content %}
+    <!-- change class -->
+    <div class="change-class"></div>
+
+    <div id="search">
+      <button type="button" class="close">×</button>
+        <form>
+            <input type="search" value="" placeholder="Search..." />
+            <button type="submit" class="primary-button"><i class="icon_search"></i></button>
+        </form>
+    </div>
+
+    <div class="main-banner boxed-banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="owl-big-banner owl-carousel">
+                {% for img in home_images %}
+                  <div class="item">
+                    <div class="overlay"></div>
+                        <img src="/media/{{ img.image }}" alt="">
+                    </div>
+                {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="medium-gap full-width-home">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="standard-posts">
+              <div class="row">
+                {% for post in posts %}
+                    <div class="col-lg-12">
+                      <div class="standard-post full-width-post">
+                        <div class="post-image">
+                          <a href="{% url 'post-decription' post.slug %}"><img src="/media/{{ post.image }}" alt=""></a>
+                        </div>
+                        <div class="down-content">
+                          <a href="{% url 'post-decription' post.slug %}"><h4>{{ post.title }}</h4></a>
+                          <ul class="post-info">
+                            <li><a href="{% url 'post-decription' post.slug %}">{{ post.created_at.date }}</a></li>
+                          </ul>
+                          <p>{{ post.small_description }}</p>
+                          <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                              <div class="comments-info">
+                                <i class="fa fa-comment-o"></i>
+                                <span>8 comments</span>
+                              </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                              <ul class="share-post">
+                                <li><i class="fa fa-share-alt"></i></li>
+                                <li><a href="#">Facebook</a>,</li>
+                                <li><a href="#">Twitter</a>,</li>
+                                <li><a href="#">Pinterest</a></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+{#                <div class="col-lg-12">#}
+{#                  <ul class="pagination">#}
+{#                    <li class="active"><a href="#">1</a></li>#}
+{#                    <li><a href="#">2</a></li>#}
+{#                    <li><a href="#">3</a></li>#}
+{#                    <li><a href="#"><i class="fa fa-angle-right"></i></a></li>#}
+{#                  </ul>#}
+{#                </div>#}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    {% endblock %}

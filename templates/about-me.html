@@ -1,0 +1,50 @@
+
+{% extends 'base_admin.html' %}
+{% load i18n %}
+
+{% block content %}
+    <!-- change class -->
+    <div class="change-class"></div>
+
+    <div id="search">
+      <button type="button" class="close">×</button>
+        <form>
+            <input type="search" value="" placeholder="Search..." />
+            <button type="submit" class="primary-button"><i class="icon_search"></i></button>
+        </form>
+    </div>
+
+    <section class="large-gap about-me about-version-one">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="widget-sidebar about-me">
+              <div class="widget-header">
+                <h4>Про мене</h4>
+              </div>
+              <div class="widget-content">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <img src="/media/{{ about.image }}" alt="">
+                  </div>
+                  <div class="col-lg-8">
+                    <p>{{ about.about_me_text }}</p>
+                    <ul class="social-icons">
+                      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                      <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                      <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                      <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+
+{% endblock %}

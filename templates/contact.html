@@ -1,0 +1,63 @@
+
+{% extends 'base_admin.html' %}
+{% load i18n %}
+
+{% block content %}
+    <!-- change class -->
+    <div class="change-class"></div>
+
+    <div id="search">
+      <button type="button" class="close">×</button>
+        <form>
+            <input type="search" value="" placeholder="Search..." />
+            <button type="submit" class="primary-button"><i class="icon_search"></i></button>
+        </form>
+    </div>
+
+    <section class="large-gap contact-me contact-version-one">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="widget-sidebar contact-me">
+              <div class="widget-header">
+                <h4>Contact Me</h4>
+              </div>
+              <div class="widget-content">
+                <div class="contact-form">
+                  <form id="contact" action="#" method="post">
+                    <div class="row">
+                      <div class="col-lg-4 col-md-12 col-sm-12">
+                        <fieldset>
+                          <input name="name" type="text" class="form-control" id="name" placeholder="Your name..." required="">
+                        </fieldset>
+                      </div>
+                      <div class="col-lg-4 col-md-12 col-sm-12">
+                        <fieldset>
+                          <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your email..." required="">
+                        </fieldset>
+                      </div>
+                      <div class="col-lg-4 col-md-12 col-sm-12">
+                        <fieldset>
+                          <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject..." required="">
+                        </fieldset>
+                      </div>
+                      <div class="col-lg-12">
+                        <fieldset>
+                          <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your message..." required=""></textarea>
+                        </fieldset>
+                      </div>
+                      <div class="col-lg-12">
+                        <fieldset>
+                          <button type="submit" id="form-submit" class="filled-button">Send Message</button>
+                        </fieldset>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
